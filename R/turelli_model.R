@@ -1,3 +1,15 @@
+#' Turelli Model Function
+#'
+#' @param p_t A numeric value between 0 and 1
+#' @param F_val A numeric value greater than 0
+#' @param mu_val A numeric value between 0 and 1
+#' @param sh_val A numeric value between 0 and 1
+#'
+#' @return A numeric value between 0 and 1
+#' @export
+#'
+#' @examples
+#' turelli_model(0.4,1.021,0.1)
 turelli_model <- function(p_t,F_val,mu_val,sh_val=0.0){
 
   num_exp <- p_t*F_val*(1-mu_val)
