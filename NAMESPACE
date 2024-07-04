@@ -2,6 +2,7 @@
 
 export(ci_stable)
 export(ci_unstable)
+export(extract_stats)
 export(mu_F_equality)
 export(no_ci)
 export(turelli_model)

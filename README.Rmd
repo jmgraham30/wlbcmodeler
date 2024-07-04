@@ -1,6 +1,5 @@
 ---
 output: github_document
-bibliography: turelli_bib.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -32,7 +31,6 @@ devtools::install_github("jmgraham30/wlbcmodeler")
 
 ## Background
 
-From [@turelli2022wolbachia], see also [@turelli2022did].
 
 $$
 \begin{align}
