@@ -6,11 +6,12 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of wlbcmodeler is to …
+The goal of `wlbcmodeler` is to implement various models for
+[wolbachia](https://en.wikipedia.org/wiki/Wolbachia) frequency dynamics.
 
 ## Installation
 
-You can install the development version of wlbcmodeler from
+You can install the development version of `wlbcmodeler` from
 [GitHub](https://github.com/) with:
 
 ``` r
