@@ -19,7 +19,9 @@ turelli_model(p_t, F_val, mu_val, sh_val = 0)
 A numeric value between 0 and 1
 }
 \description{
-Turelli Model Function
+Implements the iteration
+
+\deqn{p_{t+1} = \frac{p_t F (1 - \mu)}{1 + p_t (F - 1 - s_h) + p_t^2 s_h (1 - \mu F)}}
 }
 \examples{
 turelli_model(0.4,1.021,0.1)
