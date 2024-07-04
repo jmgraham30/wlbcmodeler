@@ -1,5 +1,6 @@
 ---
 output: github_document
+bibliography: turelli_bib.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -28,6 +29,17 @@ You can install the development version of `wlbcmodeler` from [GitHub](https://g
 # install.packages("devtools")
 devtools::install_github("jmgraham30/wlbcmodeler")
 ```
+
+## Background
+
+From [@turelli2022wolbachia], see also [@turelli2022did].
+
+$$
+\begin{align}
+p_{t+1} &= \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},  \\
+q_{ij} &= \left(\begin{array}{c} N \\ j \end{array}\right)(p^{\ast})^{j}(1 - p^{\ast})^{N - j}. 
+\end{align}
+$$
 
 ## Example
 

@@ -19,6 +19,18 @@ You can install the development version of `wlbcmodeler` from
 devtools::install_github("jmgraham30/wlbcmodeler")
 ```
 
+## Background
+
+From (Turelli, Katznelson, and Ginsberg 2022), see also (Turelli and
+Barton 2022).
+
+$$
+\begin{align}
+p_{t+1} &= \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},  \\
+q_{ij} &= \left(\begin{array}{c} N \\ j \end{array}\right)(p^{\ast})^{j}(1 - p^{\ast})^{N - j}. 
+\end{align}
+$$
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -51,3 +63,24 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
+
+<div id="ref-turelli2022did" class="csl-entry">
+
+Turelli, Michael, and Nicholas H Barton. 2022. “Why Did the Wolbachia
+Transinfection Cross the Road? Drift, Deterministic Dynamics, and
+Disease Control.” *Evolution Letters* 6 (1): 92–105.
+
+</div>
+
+<div id="ref-turelli2022wolbachia" class="csl-entry">
+
+Turelli, Michael, Andrew Katznelson, and Paul S Ginsberg. 2022. “Why
+Wolbachia-Induced Cytoplasmic Incompatibility Is so Common.”
+*Proceedings of the National Academy of Sciences* 119 (47): e2211637119.
+
+</div>
+
+</div>
