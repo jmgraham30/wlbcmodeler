@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# wlbcmodeler
+# wlbcmodeler <a href="https://github.com/jmgraham30/wlbcmodeler"><img src="man/figures/wlbcmodeler.png" align="right" height="138" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
