@@ -39,6 +39,7 @@ q_{ij} &= \left(\begin{array}{c} N \\ j \end{array}\right)(p^{\ast})^{j}(1 - p^{
 \end{align}
 $$
 
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -47,6 +48,19 @@ This is a basic example which shows you how to solve a common problem:
 library(wlbcmodeler)
 ## basic example code
 ```
+
+
+```{r fmu}
+library(ggplot2)
+library(latex2exp)
+
+data.frame(x=c(1.0,3.0)) |>
+  ggplot(aes(x=x)) + 
+  geom_function(fun = mu_F_equality, linewidth=1,color="steelblue") + 
+  labs(x = "F", y = TeX("$\\mu$")) + 
+  theme_bw()
+```
+
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 

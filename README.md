@@ -37,6 +37,19 @@ library(wlbcmodeler)
 ## basic example code
 ```
 
+``` r
+library(ggplot2)
+library(latex2exp)
+
+data.frame(x=c(1.0,3.0)) |>
+  ggplot(aes(x=x)) + 
+  geom_function(fun = mu_F_equality, linewidth=1,color="steelblue") + 
+  labs(x = "F", y = TeX("$\\mu$")) + 
+  theme_bw()
+```
+
+<img src="man/figures/README-fmu-1.png" width="100%" />
+
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
 
