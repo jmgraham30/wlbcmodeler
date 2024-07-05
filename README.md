@@ -22,11 +22,17 @@ devtools::install_github("jmgraham30/wlbcmodeler")
 ## Background
 
 $$
-\begin{align}
-p_{t+1} &= \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},  \\
-q_{ij} &= \left(\begin{array}{c} N \\ j \end{array}\right)(p^{\ast})^{j}(1 - p^{\ast})^{N - j}. 
-\end{align}
-$$
+p_{t+1} = \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},
+$$ where
+
+- $p_{t}$ is the frequency of Wolbachia infected females in the
+  population at time $t$,
+
+- $F$ is the relative fecundity of Wolbachia infected females,
+
+- $\mu$ is the transmission rate, and
+
+- $s_{h}$ is the cytoplasmic incompatibility (CI) rate.
 
 ## Example
 
