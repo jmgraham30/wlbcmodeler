@@ -21,9 +21,8 @@ devtools::install_github("jmgraham30/wlbcmodeler")
 
 ## Background
 
-$$
-p_{t+1} = \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},
-$$ where
+$$p_{t+1} = \frac{p_{t}F(1 - \mu)}{1 + p_{t}(F - 1 - s_{h}) + p_{t}^{2}s_{h}(1 - \mu F)},$$
+where
 
 - $p_{t}$ is the frequency of Wolbachia infected females in the
   population at time $t$,
