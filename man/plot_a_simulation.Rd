@@ -4,12 +4,14 @@
 \alias{plot_a_simulation}
 \title{Plot a simulation}
 \usage{
-plot_a_simulation(p_t_vec, threshold = 1e-04)
+plot_a_simulation(p_t_vec, threshold = 1e-04, alpha_val = 0.2)
 }
 \arguments{
 \item{p_t_vec}{A numeric vector}
 
 \item{threshold}{A numeric value}
+
+\item{alpha_val}{A numeric value}
 }
 \value{
 A ggplot object
