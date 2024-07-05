@@ -97,7 +97,7 @@ library(latex2exp)
 
 data.frame(x=c(1.0,3.0)) |>
   ggplot(aes(x=x)) + 
-  geom_function(fun = mu_F_equality, linewidth=1,color="steelblue") + 
+  geom_function(fun = mu_F_equality, linewidth=1,color="#4988BFFF") + 
   labs(x = "F", y = TeX("$\\mu$")) + 
   theme_bw()
 ```
