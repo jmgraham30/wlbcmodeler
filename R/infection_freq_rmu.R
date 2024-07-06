@@ -13,9 +13,42 @@
 #' infection_freq_rmu(0.5,1,c(0.1,0.2),c(0.5,0.5),100)
 infection_freq_rmu <- function(p_t,F_val,mu_vect,bin_props,N_val){
 
-  N_s <- round(F_val * N_val * p_t * bin_props)
+  N_s <- base::round(F_val * N_val * p_t * bin_props)
   P_t <- binned_binomial(N_s,1-mu_vect)/N_val
 
-  return(sum(P_t) / (1 + p_t*(F_val - 1)))
+  return(base::sum(P_t) / (1 + p_t*(F_val - 1)))
+
+}
+
+#' Iterate Random mu infection frequency model
+#'
+#' @param F_val A numeric value for the fitness
+#' @param mu_vect A numeric vector of transmission rates for each group
+#' @param bin_props A numeric vector of proportions for each group
+#' @param N_val A numeric value for the total population size
+#' @param p_t_init A numeric value between 0 and 1 for the initial infection frequency
+#' @param n_iter A numeric value for the maximum number of iterations
+#'
+#' @return A numeric vector of infection frequencies
+#' @export
+#'
+#' @examples
+#' ptlt <- infection_freq_rmu_iteration(1.2,c(0.01,0.9),c(0.99,0.01),1000)
+#' plot_a_simulation(ptlt,alpha=0.8)
+#' extract_stats(ptlt)
+infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,p_t_init=0.4,n_iter=10000){
+
+  p_t <- p_t_init
+  p_t_vec <- base::numeric(n_iter)
+  p_t_vec[1] <- p_t
+  i_ind <- 2
+
+  while(i_ind <= n_iter && p_t > 0.0001 && p_t < 0.99){
+    p_t <- infection_freq_rmu(p_t,F_val,mu_vect,bin_props,N_val)
+    p_t_vec[i_ind] <- p_t
+    i_ind <- i_ind + 1
+  }
+
+  return(p_t_vec[p_t_vec > 0])
 
 }
