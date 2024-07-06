@@ -23,16 +23,17 @@ turelli_simulation_rf <- function(p_0,F_val_m,F_cv,
                                mu_val,sh_val,N,
                                max_iter=10^8, thresh = 10^(-5)){
 
-  F_val_s <- stats::rnorm(max_iter-1, mean=log(F_val_m), sd=sqrt(log(F_cv^2 + 1))) |>
-    exp()
-
-  F_val <- ifelse(F_val_s < 0.001, 0.001, F_val_s)
-
   gen_i <- 1
   p <- numeric(max_iter)
 
   while (gen_i < max_iter & p_0 > thresh){
-    p_0 <- turelli_iteration(p_0,F_val=F_val[gen_i],mu_val=mu_val,
+
+    F_val_s <- stats::rnorm(1, mean=log(F_val_m), sd=sqrt(log(F_cv^2 + 1))) |>
+      exp()
+
+    F_val <- ifelse(F_val_s < 0.001, 0.001, F_val_s)
+
+    p_0 <- turelli_iteration(p_0,F_val=F_val,mu_val=mu_val,
                              sh_val=sh_val,N=N)
     gen_i <- gen_i + 1
     p[gen_i] <- p_0
@@ -67,15 +68,17 @@ turelli_simulation_rf_tf <- function(p_0,F_val_m,F_cv,
                                   mu_val,sh_val,N,
                                   max_iter=10^8, thresh = 10^(-5)){
 
-  F_val_s <- stats::rnorm(max_iter-1, mean=log(F_val_m), sd=sqrt(log(F_cv^2 + 1))) |>
-    exp()
-
-  F_val <- ifelse(F_val_s < 0.001, 0.001, F_val_s)
 
   gen_i <- 1
 
   while (gen_i < max_iter & p_0 > thresh){
-    p_0 <- turelli_iteration(p_0,F_val=F_val[gen_i],mu_val=mu_val,
+
+    F_val_s <- stats::rnorm(1, mean=log(F_val_m), sd=sqrt(log(F_cv^2 + 1))) |>
+      exp()
+
+    F_val <- ifelse(F_val_s < 0.001, 0.001, F_val_s)
+
+    p_0 <- turelli_iteration(p_0,F_val=F_val,mu_val=mu_val,
                              sh_val=sh_val,N=N)
     gen_i <- gen_i + 1
   }
