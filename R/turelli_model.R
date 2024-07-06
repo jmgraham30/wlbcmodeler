@@ -87,6 +87,6 @@ turelli_simulation <- function(p_0,F_val,
     p[gen_i] <- p_0
   }
 
-  return(p)
+  return(p[p > 0])
 
 }

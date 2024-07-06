@@ -38,6 +38,6 @@ turelli_simulation_rf <- function(p_0,F_val_m,F_cv,
     p[gen_i] <- p_0
   }
 
-  return(p)
+  return(p[p > 0])
 
 }
