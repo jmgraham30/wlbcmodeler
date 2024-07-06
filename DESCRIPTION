@@ -13,6 +13,7 @@ Imports:
     base,
     ggplot2,
     latex2exp,
+    purrr,
     scales,
     stats,
     tibble
