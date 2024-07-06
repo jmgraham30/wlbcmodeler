@@ -5,6 +5,7 @@
 #'
 #' \deqn{p_{t+1} = \frac{p_t F (1 - \mu)}{1 + p_t (F - 1 - s_h) + p_t^2 s_h (1 - \mu F)}}
 #'
+#' This is the basic deterministic model.
 #'
 #' @param p_t A numeric value between 0 and 1
 #' @param F_val A numeric value greater than 0
@@ -31,7 +32,7 @@ turelli_model <- function(p_t,F_val,mu_val,sh_val=0.0){
 #'
 #' @description
 #' Implements the basic iteration for the Turelli model
-#' assuming a finite population.
+#' assuming a finite population. This calls the function \code{turelli_model}.
 #'
 #' @param p_val A numeric value between 0 and 1
 #' @param F_val A numeric value greater than 0

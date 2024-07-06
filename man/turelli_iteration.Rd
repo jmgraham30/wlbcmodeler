@@ -22,7 +22,7 @@ A numeric value between 0 and 1
 }
 \description{
 Implements the basic iteration for the Turelli model
-assuming a finite population.
+assuming a finite population. This calls the function \code{turelli_model}.
 }
 \examples{
 turelli_iteration(0.4,1.021,0.1,0.0,1000)

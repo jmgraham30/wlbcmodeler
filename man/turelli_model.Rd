@@ -22,6 +22,8 @@ A numeric value between 0 and 1
 Implements the iteration
 
 \deqn{p_{t+1} = \frac{p_t F (1 - \mu)}{1 + p_t (F - 1 - s_h) + p_t^2 s_h (1 - \mu F)}}
+
+This is the basic deterministic model.
 }
 \examples{
 turelli_model(0.4,1.021,0.1)
