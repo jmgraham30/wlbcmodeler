@@ -90,3 +90,38 @@ turelli_simulation <- function(p_0,F_val,
   return(p[p > 0])
 
 }
+
+#' Simulation of Turelli model
+#'
+#' @description
+#' Simulates the Turelli model for a given number of generations
+#' or until the frequency is below a given threshold.
+#'
+#' @param p_0 A numeric value between 0 and 1
+#' @param F_val A numeric value greater than 0
+#' @param mu_val A numeric value between 0 and 1
+#' @param sh_val A numeric value between 0 and 1
+#' @param N A numeric value greater than 0
+#' @param max_iter A numeric value greater than 0
+#' @param thresh A numeric value between 0 and 1
+#'
+#' @return A numeric with the persistence time
+#' @export
+#'
+#' @examples
+#' turelli_simulation_tf(0.4,1.021,0.1,0.0,1000)
+turelli_simulation_tf <- function(p_0,F_val,
+                               mu_val,sh_val,N,
+                               max_iter=10^4, thresh = 10^(-5)){
+
+  gen_i <- 1
+
+  while (gen_i < max_iter & p_0 > thresh){
+    p_0 <- turelli_iteration(p_0,F_val=F_val,mu_val=mu_val,
+                             sh_val=sh_val,N=N)
+    gen_i <- gen_i + 1
+  }
+
+  return(gen_i)
+
+}
