@@ -68,7 +68,7 @@ turelli_iteration <- function(p_val,F_val,
 #' @param max_iter A numeric value greater than 0
 #' @param thresh A numeric value between 0 and 1
 #'
-#' @return A numeric vector with the frequency of the allele
+#' @return A numeric vector with the frequency of infected over time
 #' @export
 #'
 #' @examples

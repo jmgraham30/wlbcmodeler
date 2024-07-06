@@ -30,7 +30,7 @@ turelli_simulation(
 \item{thresh}{A numeric value between 0 and 1}
 }
 \value{
-A numeric vector with the frequency of the allele
+A numeric vector with the frequency of infected over time
 }
 \description{
 Simulates the Turelli model for a given number of generations
