@@ -28,6 +28,8 @@ infection_freq_rmu <- function(p_t,F_val,mu_vect,bin_props,N_val){
 #' @param N_val A numeric value for the total population size
 #' @param p_t_init A numeric value between 0 and 1 for the initial infection frequency
 #' @param n_iter A numeric value for the maximum number of iterations
+#' @param lwr_thresh A numeric value for the lower threshold
+#' @param upr_thresh A numeric value for the upper threshold
 #'
 #' @return A numeric vector of infection frequencies
 #' @export
@@ -36,14 +38,16 @@ infection_freq_rmu <- function(p_t,F_val,mu_vect,bin_props,N_val){
 #' ptlt <- infection_freq_rmu_iteration(1.2,c(0.01,0.9),c(0.99,0.01),1000)
 #' plot_a_simulation(ptlt,alpha=0.8)
 #' extract_stats(ptlt)
-infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,p_t_init=0.4,n_iter=10000){
+infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,
+                                         p_t_init=0.4,n_iter=10000,
+                                         lwr_thresh = 0.0001, upr_thresh = 0.99){
 
   p_t <- p_t_init
   p_t_vec <- base::numeric(n_iter)
   p_t_vec[1] <- p_t
   i_ind <- 2
 
-  while(i_ind <= n_iter && p_t > 0.0001 && p_t < 0.99){
+  while(i_ind <= n_iter && p_t > lwr_thresh && p_t < upr_thresh){
     p_t <- infection_freq_rmu(p_t,F_val,mu_vect,bin_props,N_val)
     p_t_vec[i_ind] <- p_t
     i_ind <- i_ind + 1
