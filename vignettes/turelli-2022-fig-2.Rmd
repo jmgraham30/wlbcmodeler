@@ -1,0 +1,59 @@
+---
+title: "Reproducing Figure 2 from Turelli et al. (2022)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{turelli-2022-fig-2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(wlbcmodeler)
+library(tidyverse)
+library(ggthemes)
+library(scales)
+library(latex2exp)
+```
+
+```{r}
+glimpse(turelli_2022_fig_02_data_1)
+```
+
+```{r}
+glimpse(turelli_2022_fig_02_data_2)
+```
+
+```{r}
+df_1_s <- turelli_2022_fig_02_data_1 |>
+  group_by(sh_val) |>
+  summarise(mean = mean(t_f), n = n()) |>
+  mutate(F_val = "1.021")
+
+df_2_s <- turelli_2022_fig_02_data_2 |>
+  group_by(sh_val) |>
+  summarise(mean = mean(t_f), n = n())  |>
+  mutate(F_val = "1.05")
+
+df_12 <- rbind(df_1_s,df_2_s)
+
+glimpse(df_12)
+```
+
+
+```{r}
+df_12 %>% 
+  ggplot(aes(x=sh_val, y = mean,color=F_val)) +
+  geom_point() +
+  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+                labels = trans_format("log10", math_format(10^.x))) + 
+  scale_color_colorblind() +
+  theme_bw() + 
+  labs(x = TeX("$s_{h}$"), y = TeX("$\\hat{E}(T_{Loss})$"), color=TeX("$Median_{F}$"))
+```
