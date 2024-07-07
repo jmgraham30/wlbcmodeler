@@ -2,7 +2,7 @@
 % Please edit documentation in R/infection_freq_rmu.R
 \name{infection_freq_rmu_sim}
 \alias{infection_freq_rmu_sim}
-\title{Main simulation for fixed F but random mu}
+\title{Main simulation for fixed F but random mu model}
 \usage{
 infection_freq_rmu_sim(rep_num, F_val, mu_vect, bin_props, N_val, ...)
 }

@@ -58,7 +58,7 @@ infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,
 }
 
 
-#' Main simulation for fixed F but random mu
+#' Main simulation for fixed F but random mu model
 #'
 #' @description
 #' This function simulates the infection frequency
