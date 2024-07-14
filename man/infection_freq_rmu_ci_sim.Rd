@@ -4,7 +4,16 @@
 \alias{infection_freq_rmu_ci_sim}
 \title{Main simulation for fixed F but random mu model with CI}
 \usage{
-infection_freq_rmu_ci_sim(rep_num, F_val, mu_vect, bin_props, s_h, N_val, ...)
+infection_freq_rmu_ci_sim(
+  rep_num,
+  F_val,
+  mu_vect,
+  bin_props,
+  s_h,
+  N_val,
+  p_t_init = 0.4,
+  ...
+)
 }
 \arguments{
 \item{rep_num}{A numeric value for the number of replications}
@@ -18,6 +27,8 @@ infection_freq_rmu_ci_sim(rep_num, F_val, mu_vect, bin_props, s_h, N_val, ...)
 \item{s_h}{A numeric value for the CI}
 
 \item{N_val}{A numeric value for the total population size}
+
+\item{p_t_init}{A numeric value between 0 and 1}
 
 \item{...}{Additional arguments}
 }

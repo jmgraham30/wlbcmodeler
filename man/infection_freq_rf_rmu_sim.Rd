@@ -11,6 +11,7 @@ infection_freq_rf_rmu_sim(
   mu_vect,
   bin_props,
   N_val,
+  p_t_init = 0.4,
   ...
 )
 }
@@ -26,6 +27,8 @@ infection_freq_rf_rmu_sim(
 \item{bin_props}{A numeric vector of proportions for each group}
 
 \item{N_val}{A numeric value for the total population size}
+
+\item{p_t_init}{A numeric value between 0 and 1 for the initial infection frequency}
 
 \item{...}{Additional arguments}
 }

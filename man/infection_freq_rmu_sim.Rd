@@ -4,7 +4,15 @@
 \alias{infection_freq_rmu_sim}
 \title{Main simulation for fixed F but random mu model}
 \usage{
-infection_freq_rmu_sim(rep_num, F_val, mu_vect, bin_props, N_val, ...)
+infection_freq_rmu_sim(
+  rep_num,
+  F_val,
+  mu_vect,
+  bin_props,
+  N_val,
+  p_t_init = 0.4,
+  ...
+)
 }
 \arguments{
 \item{rep_num}{A numeric value for the number of replications}
@@ -16,6 +24,8 @@ infection_freq_rmu_sim(rep_num, F_val, mu_vect, bin_props, N_val, ...)
 \item{bin_props}{A numeric vector of proportions for each group}
 
 \item{N_val}{A numeric value for the total population size}
+
+\item{p_t_init}{A numeric value between 0 and 1 for the initial infection frequency}
 
 \item{...}{Additional arguments}
 }

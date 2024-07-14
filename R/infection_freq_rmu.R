@@ -69,6 +69,7 @@ infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,
 #' @param mu_vect A numeric vector of transmission rates for each group
 #' @param bin_props A numeric vector of proportions for each group
 #' @param N_val A numeric value for the total population size
+#' @param p_t_init A numeric value between 0 and 1 for the initial infection frequency
 #' @param ... Additional arguments
 #'
 #' @return A tibble with the simulation results
@@ -76,9 +77,9 @@ infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,
 #'
 #' @examples
 #' infection_freq_rmu_sim(1,1.05,c(0.01,0.9),c(0.99,0.01),1000)
-infection_freq_rmu_sim <- function(rep_num,F_val,mu_vect,bin_props,N_val,...){
+infection_freq_rmu_sim <- function(rep_num,F_val,mu_vect,bin_props,N_val,p_t_init=0.4,...){
 
-  a_sim <- infection_freq_rmu_iteration(F_val,mu_vect,bin_props,N_val)
+  a_sim <- infection_freq_rmu_iteration(F_val,mu_vect,bin_props,N_val,p_t_init=p_t_init)
   sim_res <- extract_stats(a_sim)
   parm_data <- tibble::tibble(rep_num=rep_num,F_val=F_val,mu_vect=mu_vect,bin_props=bin_props,N_val=N_val)
   return(dplyr::bind_cols(parm_data,sim_res))

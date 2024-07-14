@@ -55,6 +55,7 @@ infection_freq_rf_rmu_ci_iteration <- function(F_val_m,F_cv,mu_vect,bin_props,s_
 #' @param bin_props A numeric vector of proportions for each group
 #' @param s_h A numeric value for the CI
 #' @param N_val A numeric value for the total population size
+#' @param p_t_init A numeric value between 0 and 1 for the initial infection frequency
 #' @param ... Additional arguments
 #'
 #' @return A tibble of simulation results
@@ -62,9 +63,9 @@ infection_freq_rf_rmu_ci_iteration <- function(F_val_m,F_cv,mu_vect,bin_props,s_
 #'
 #' @examples
 #' infection_freq_rf_rmu_ci_sim(1,1.2,0.1,c(0.01,0.9),c(0.99,0.01),0.1,1000)
-infection_freq_rf_rmu_ci_sim <- function(rep_num,F_val_m,F_cv,mu_vect,bin_props,s_h,N_val,...){
+infection_freq_rf_rmu_ci_sim <- function(rep_num,F_val_m,F_cv,mu_vect,bin_props,s_h,N_val,p_t_init=0.4,...){
 
-  a_sim <- infection_freq_rf_rmu_ci_iteration(F_val_m,F_cv,mu_vect,bin_props,s_h,N_val)
+  a_sim <- infection_freq_rf_rmu_ci_iteration(F_val_m,F_cv,mu_vect,bin_props,s_h,N_val,p_t_init=p_t_init)
   sim_res <- extract_stats(a_sim)
   parm_data <- tibble::tibble(rep_num=rep_num,F_val_m=F_val_m,F_cv=F_cv,mu_vect=mu_vect,bin_props=bin_props,s_h=s_h,N_val=N_val)
   return(dplyr::bind_cols(parm_data,sim_res))
