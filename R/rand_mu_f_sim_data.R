@@ -7,7 +7,7 @@
 #'
 #'
 #' @format ## `rand_mu_f_sim_data_1`
-#' A data frame with 18,200 rows and 12 columns:
+#' A data frame with 36,400 rows and 13 columns:
 #' \describe{
 #'   \item{rep_num}{Repitition number}
 #'   \item{F_val}{F value}
@@ -34,7 +34,7 @@
 #'
 #'
 #' @format ## `rand_mu_f_sim_data_2`
-#' A data frame with 72,800 rows and 12 columns:
+#' A data frame with 145,600 rows and 13 columns:
 #' \describe{
 #'   \item{rep_num}{Repitition number}
 #'   \item{F_val}{F value}
