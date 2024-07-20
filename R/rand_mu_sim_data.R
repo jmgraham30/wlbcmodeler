@@ -1,7 +1,7 @@
-#' Turelli et al. 2022 Figure 2 F_m = 1.021 data
+#' Simulation data for random mu model.
 #'
 #' Model-simulated data for multi-binomial distributed mu.
-#'
+#' Single mu group scenario.
 #'
 #'
 #' @format ## `rand_mu_sim_data_1`
@@ -24,10 +24,10 @@
 #' @source Simulated from a model.
 "rand_mu_sim_data_1"
 
-#' Turelli et al. 2022 Figure 2 F_m = 1.05 data
+#' Simulation data for random mu model.
 #'
 #' Model-simulated data for multi-binomial distributed mu.
-#'
+#' Two mu groups scenario.
 #'
 #' @format ## `rand_mu_sim_data_2`
 #' A data frame with 72,800 rows and 12 columns:

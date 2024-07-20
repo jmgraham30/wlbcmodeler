@@ -3,7 +3,7 @@
 \docType{data}
 \name{rand_mu_sim_data_1}
 \alias{rand_mu_sim_data_1}
-\title{Turelli et al. 2022 Figure 2 F_m = 1.021 data}
+\title{Simulation data for random mu model.}
 \format{
 \subsection{\code{rand_mu_sim_data_1}}{
 
@@ -33,5 +33,6 @@ rand_mu_sim_data_1
 }
 \description{
 Model-simulated data for multi-binomial distributed mu.
+Single mu group scenario.
 }
 \keyword{datasets}
