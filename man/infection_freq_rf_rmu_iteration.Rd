@@ -13,7 +13,7 @@ infection_freq_rf_rmu_iteration(
   p_t_init = 0.4,
   n_iter = 10000,
   lwr_thresh = 1e-04,
-  upr_thresh = 0.99
+  upr_thresh = 1
 )
 }
 \arguments{

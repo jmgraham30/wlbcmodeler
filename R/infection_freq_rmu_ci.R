@@ -49,7 +49,7 @@ infection_freq_rmu_ci <- function(p_t,F_val,mu_vect,bin_props,s_h,N_val){
 #' infection_freq_rmu_ci_iteration(1.2,c(0.01,0.8),c(0.99,0.01),0.1,1000)
 infection_freq_rmu_ci_iteration <- function(F_val,mu_vect,bin_props,s_h,N_val,
                                          p_t_init=0.4,n_iter=10000,
-                                         lwr_thresh = 0.0001, upr_thresh = 0.99){
+                                         lwr_thresh = 0.0001, upr_thresh = 1.0){
 
   p_t <- p_t_init
   p_t_vec <- base::numeric(n_iter)

@@ -40,7 +40,7 @@ infection_freq_rmu <- function(p_t,F_val,mu_vect,bin_props,N_val){
 #' extract_stats(ptlt)
 infection_freq_rmu_iteration <- function(F_val,mu_vect,bin_props,N_val,
                                          p_t_init=0.4,n_iter=10000,
-                                         lwr_thresh = 0.0001, upr_thresh = 0.99){
+                                         lwr_thresh = 0.0001, upr_thresh = 1.0){
 
   p_t <- p_t_init
   p_t_vec <- base::numeric(n_iter)

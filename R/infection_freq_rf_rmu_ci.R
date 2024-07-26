@@ -20,7 +20,7 @@
 #' extract_stats(ptlt)
 infection_freq_rf_rmu_ci_iteration <- function(F_val_m,F_cv,mu_vect,bin_props,s_h,N_val,
                                             p_t_init=0.4,n_iter=10000,
-                                            lwr_thresh = 0.0001, upr_thresh = 0.99){
+                                            lwr_thresh = 0.0001, upr_thresh = 1.0){
 
   F_val_s <- stats::rnorm(n_iter, mean=log(F_val_m), sd=sqrt(log(F_cv^2 + 1))) |>
     exp()
