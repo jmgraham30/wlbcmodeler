@@ -5,7 +5,7 @@
 #'
 #'
 #' @format ## `rand_mu_sim_data_1`
-#' A data frame with 18,200 rows and 12 columns:
+#' A data frame with 27,500 rows and 12 columns:
 #' \describe{
 #'   \item{rep_num}{Repitition number}
 #'   \item{F_val}{F value}
@@ -30,7 +30,7 @@
 #' Two mu groups scenario.
 #'
 #' @format ## `rand_mu_sim_data_2`
-#' A data frame with 72,800 rows and 12 columns:
+#' A data frame with 110,000 rows and 12 columns:
 #' \describe{
 #'   \item{rep_num}{Repitition number}
 #'   \item{F_val}{F value}
