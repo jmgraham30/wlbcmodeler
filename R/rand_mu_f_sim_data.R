@@ -34,7 +34,7 @@
 #'
 #'
 #' @format ## `rand_mu_f_sim_data_2`
-#' A data frame with 145,600 rows and 13 columns:
+#' A data frame with 220,000 rows and 13 columns:
 #' \describe{
 #'   \item{rep_num}{Repitition number}
 #'   \item{F_val}{F value}
