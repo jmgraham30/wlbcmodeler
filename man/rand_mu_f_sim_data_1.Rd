@@ -7,7 +7,7 @@
 \format{
 \subsection{\code{rand_mu_f_sim_data_1}}{
 
-A data frame with 36,400 rows and 13 columns:
+A data frame with 55,000 rows and 13 columns:
 \describe{
 \item{rep_num}{Repitition number}
 \item{F_val}{F value}
