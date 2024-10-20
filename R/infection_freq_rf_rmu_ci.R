@@ -67,7 +67,10 @@ infection_freq_rf_rmu_ci_sim <- function(rep_num,F_val_m,F_cv,mu_vect,bin_props,
 
   a_sim <- infection_freq_rf_rmu_ci_iteration(F_val_m,F_cv,mu_vect,bin_props,s_h,N_val,p_t_init=p_t_init)
   sim_res <- extract_stats(a_sim)
-  parm_data <- tibble::tibble(rep_num=rep_num,F_val_m=F_val_m,F_cv=F_cv,mu_vect=mu_vect,bin_props=bin_props,s_h=s_h,N_val=N_val)
+  parm_data <- tibble::tibble(rep_num=rep_num,
+                              F_val_m=F_val_m,F_cv=F_cv,mu_vect=mu_vect,
+                              bin_props=bin_props,s_h=s_h,N_val=N_val,
+                              prop_sim=list(a_sim))
   return(dplyr::bind_cols(parm_data,sim_res))
 
 }
