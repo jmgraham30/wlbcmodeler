@@ -40,7 +40,6 @@ infection_freq_rmu_ci <- function(p_t,F_val,mu_vect,bin_props,s_h,N_val){
 #' @param p_t_init A numeric value between 0 and 1
 #' @param n_iter A numeric value for the number of iterations
 #' @param lwr_thresh A numeric value for the lower threshold
-#' @param upr_thresh A numeric value for the upper threshold
 #'
 #' @return A numeric vector of infection frequencies
 #' @export
@@ -49,16 +48,16 @@ infection_freq_rmu_ci <- function(p_t,F_val,mu_vect,bin_props,s_h,N_val){
 #' infection_freq_rmu_ci_iteration(1.2,c(0.01,0.8),c(0.99,0.01),0.1,1000)
 infection_freq_rmu_ci_iteration <- function(F_val,mu_vect,bin_props,s_h,N_val,
                                          p_t_init=0.4,n_iter=10000,
-                                         lwr_thresh = 0.0001, upr_thresh = 1.0){
+                                         lwr_thresh = 0.0001){
 
   p_t <- p_t_init
   p_t_vec <- base::numeric(n_iter)
   p_t_vec[1] <- p_t
   i_ind <- 2
 
-  while(i_ind <= n_iter && p_t > lwr_thresh && p_t < upr_thresh){
+  while(i_ind <= n_iter && p_t > lwr_thresh){
     p_t <- infection_freq_rmu_ci(p_t,F_val,mu_vect,bin_props,s_h,N_val)
-    p_t_vec[i_ind] <- p_t
+    p_t_vec[i_ind] <- min(p_t,1.0)
     i_ind <- i_ind + 1
   }
 

@@ -12,8 +12,7 @@ infection_freq_rmu_ci_iteration(
   N_val,
   p_t_init = 0.4,
   n_iter = 10000,
-  lwr_thresh = 1e-04,
-  upr_thresh = 1
+  lwr_thresh = 1e-04
 )
 }
 \arguments{
@@ -32,8 +31,6 @@ infection_freq_rmu_ci_iteration(
 \item{n_iter}{A numeric value for the number of iterations}
 
 \item{lwr_thresh}{A numeric value for the lower threshold}
-
-\item{upr_thresh}{A numeric value for the upper threshold}
 }
 \value{
 A numeric vector of infection frequencies
