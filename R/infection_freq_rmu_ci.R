@@ -57,6 +57,9 @@ infection_freq_rmu_ci_iteration <- function(F_val,mu_vect,bin_props,s_h,N_val,
 
   while(i_ind <= n_iter && p_t > lwr_thresh){
     p_t <- infection_freq_rmu_ci(p_t,F_val,mu_vect,bin_props,s_h,N_val)
+    if (is.na(p_t)){
+      p_t <- 1.0
+    }
     p_t_vec[i_ind] <- min(p_t,1.0)
     i_ind <- i_ind + 1
   }
